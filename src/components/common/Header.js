@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { baseUrl } from "../../Utility/constants";
+//import { baseUrl } from "../components/Utility/constants";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [userImage, setUserImage] = useState(null);
   const [imageAlt, setImageAlt] = useState(null);
 
+  const baseUrl = 'http://localhost:7051/';
   const fetchUserDetails = async () => {
     try {
       const response = await axios.get(`${baseUrl}api/Users/viewUser?ID=${localStorage.getItem("userID")}`, {
